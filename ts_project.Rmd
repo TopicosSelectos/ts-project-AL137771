@@ -27,7 +27,6 @@ Data [https://insights.stackoverflow.com/survey]
 
 ### Data for Software Engineering Teamwork Assessment in Education Setting Data Set 
 
-
 1.-How many observations per year?
 
 2.- In which year and season the collection data process began?
@@ -40,3 +39,8 @@ Data [https://insights.stackoverflow.com/survey]
 
 Data [https://archive.ics.uci.edu/ml/datasets/Data+for+Software+Engineering+Teamwork+Assessment+in+Education+Setting]
 
+### Instructions
+
+1.- For each question, you should provide a graph and explanation that describe your results.
+
+2.- You results should  be submitted in an R script (Rmd extension - r markdown-) file and using GitHub
