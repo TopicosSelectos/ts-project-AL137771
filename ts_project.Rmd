@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 5.- Which of the following best describes the highest level of formal education that you’ve completed?
 
-Data [https://insights.stackoverflow.com/survey]
+6.- You need to download this dataset from this reference [https://insights.stackoverflow.com/survey]
 
 ### Data for Software Engineering Teamwork Assessment in Education Setting Data Set 
 
@@ -37,7 +37,9 @@ Data [https://insights.stackoverflow.com/survey]
 
 5.- What is the relationship between the number of commits (commitCount) and the total hours of coding deliverables (codingDeliveablesHoursTotal)? Can we infer a relationship? Could we define this relationship as positive or negative?
 
-Data [https://archive.ics.uci.edu/ml/datasets/Data+for+Software+Engineering+Teamwork+Assessment+in+Education+Setting]
+6.- The dataset is already on GitHub in the data folder
+
+Data reference [https://archive.ics.uci.edu/ml/datasets/Data+for+Software+Engineering+Teamwork+Assessment+in+Education+Setting]
 
 ### Instructions
 
