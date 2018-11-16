@@ -44,3 +44,9 @@ Data [https://archive.ics.uci.edu/ml/datasets/Data+for+Software+Engineering+Team
 1.- For each question, you should provide a graph and explanation that describe your results.
 
 2.- You results should  be submitted in an R script (Rmd extension - r markdown-) file and using GitHub
+
+### Deadline
+
+This project should be submitted on October 22
+
+
