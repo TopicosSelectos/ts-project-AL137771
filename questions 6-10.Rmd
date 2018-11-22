@@ -1,0 +1,149 @@
+---
+title: "Questions 6-10"
+author: "Cesar"
+date: "20/11/2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+SE <- read.csv("C:/Users/G50/Documents/R pRogRams/SE.csv")
+
+library(tidyverse)
+library(ggplot2)
+library(forcats)
+library(gapminder)
+### QUESTION 1
+
+##SE %>% count(year)
+
+ggplot(data = SE) +
+        geom_bar(mapping = aes(year, fill = year)) +
+        theme_light() +
+        theme(plot.background = element_rect(fill = "green"))
+
+### QUESTION 2
+
+str(SE["semester"])
+
+factor(SE["semester"], order = TRUE, levels = c("Spring", "Fall")) 
+
+
+Question2 <- SE %>% select(year, semester)
+
+Question2
+
+factor(Question2["semester"], order = TRUE, levels = c("Spring", "Fall"))
+  
+ View(SE)
+
+  Q2 <- Question2%>% 
+          arrange(year) %>%   
+        arrange(semester)
+  Q2
+##RRESPUESTASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS 
+  Q2 %>% count(year)
+  ggplot(Q2, aes(year, semester, color = semester)) +
+        geom_point()
+###RESPUESTASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSss
+
+### QUESTION 3
+
+   QUESTION3 <- SE %>% select(year, teamNumber, teamMemberCount, femaleTeamMembersPercent)
+    
+ View(QUESTION3)
+ 
+    
+ 
+   QUESTION3  %>%  summarise
+              (totalHombres = sum(teamMemberCount))
+   
+   
+  QUESTION33 <- QUESTION3 %>%
+                mutate(
+                femaleTeamMembers = teamMemberCount * femaleTeamMembersPercent, 
+                maleMembers = teamMemberCount - femaleTeamMembers )
+                
+      
+  
+  QUESTION33
+  
+  
+  #### RESPUESTASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+  ggplot(QUESTION33) +
+            geom_histogram(mapping = aes(x = year , y = teamMemberCount ))  
+            ggtitle("Total Members per year")
+  
+  ggplot(QUESTION33) +
+            geom_col(mapping = aes(x = year , y = femaleTeamMembers ))  +
+            ggtitle("Female members per year")
+  
+  ggplot(QUESTION33) +
+            geom_col(mapping = aes(x = year , y = maleMembers ))  +
+            ggtitle("Male members per year")
+  
+  
+  noway <- QUESTION33 %>% summarise(
+                  total = sum(teamMemberCount),
+                  totalMujeres = sum(femaleTeamMembers),
+                  totalHombres = total - totalMujeres
+  
+ #RESPUESTASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+### QUESTION 4
+
+QUESTION4 <- SE %>% select(year, semester, teamNumber, teamMemberCount)
+
+View(QUESTION4)
+
+Q4.1 <- QUESTION4 %>% group_by(teamNumber)%>%
+            summarize(total = sum(teamMemberCount)))
+
+  
+ggplot(Q4.1, aes(teamNumber, total)) +
+        geom_col() +
+  theme(plot.background = element_rect(fill = "green"))
+      
+Q4.2 <- QUESTION4 %>% group_by(teamNumber, semester)%>%
+            summarize(total = sum(teamMemberCount))
+
+ggplot(Q4.2, aes(teamNumber, total)) +
+        geom_col() +
+  theme(plot.background = element_rect(fill = "green")) +
+  facet_wrap(~semester) 
+
+Q4.3 <- QUESTION4 %>% group_by(teamNumber, year)%>%
+            summarize(total = sum(teamMemberCount))
+
+ggplot(Q4.3, aes(teamNumber, total)) +
+        geom_col() +
+  theme(plot.background = element_rect(fill = "green")) +
+  facet_wrap(~year) 
+### QUESTION 5
+```
+
